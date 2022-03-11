@@ -1,4 +1,11 @@
-
+.heading{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: #3B5998;
+    background-color: #EDEDED;
+    padding: 15px 0;
+}
 .title{
     font-weight: bold;
     color: #3B5998;

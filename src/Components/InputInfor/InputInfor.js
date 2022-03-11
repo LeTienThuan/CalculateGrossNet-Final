@@ -10,7 +10,6 @@ const InputInfor = (props) => {
 
     return (
         <>
-            <p className={classes.title}>Tính lương Gross sang NET và ngược lại (cập nhật 1/1/2020)</p>
             <Income income={income}
                     onUpdateIncome={onUpdateIncome}
             />

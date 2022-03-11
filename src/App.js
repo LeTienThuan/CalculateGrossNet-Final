@@ -8,6 +8,7 @@ import {defaultInputValue} from "./DefaultValue/defaultInputValue";
 import {defaultResultDetailValue} from "./DefaultValue/defaultResultDetailValue";
 import {convertGrossToNet} from "./Logic/GrossToNet/Salary/convertGrossToNet";
 import {convertNetToGross} from "./Logic/NetToGross/Salary/convertNetToGross";
+import classes from "./Components/CSS/General.module.css";
 
 function App() {
     const [salaryValue, setSalaryValue] = useState(defaultInputValue);
@@ -46,28 +47,30 @@ function App() {
         setResultDetail(newResult);
     }
 
-    return (
-        <div className="app">
-            <InputInfor salaryValue={salaryValue}
-                        onUpdateIncome={updateIncome}
-                        onUpdateInsurance={updateInsurance}
-                        onUpdateArea={updateArea}
-                        onUpdateFamilyAllowances={updateFamilyAllowances}
-            />
-            <GroupButton onConvertGrossToNet={calculateGrossToNet}
-                         onConvertNetToGross={calculateNetToGross}
-            />
-            <Result grossSalaryVND={grossSalaryVND}
-                    grossSalaryUSD={grossSalaryUSD}
-                    netSalaryVND={netSalaryVND}
-                    netSalaryUSD={netSalaryUSD}
-            />
-            <DetailDescriptionTable result={resultDetail}
-                                    socialInsurancePercent={socialInsurancePercent}
-                                    healthInsurancePercent={healthInsurancePercent}
-                                    unemploymentInsurancePercent={unemploymentInsurancePercent}
-            />
-        </div>
+    return (<>
+                <p className={classes.heading}>Tính lương Gross sang NET và ngược lại (cập nhật 1/1/2020)</p>
+                <div className="app">
+                    <InputInfor salaryValue={salaryValue}
+                                onUpdateIncome={updateIncome}
+                                onUpdateInsurance={updateInsurance}
+                                onUpdateArea={updateArea}
+                                onUpdateFamilyAllowances={updateFamilyAllowances}
+                    />
+                    <GroupButton onConvertGrossToNet={calculateGrossToNet}
+                                 onConvertNetToGross={calculateNetToGross}
+                    />
+                    <Result grossSalaryVND={grossSalaryVND}
+                            grossSalaryUSD={grossSalaryUSD}
+                            netSalaryVND={netSalaryVND}
+                            netSalaryUSD={netSalaryUSD}
+                    />
+                    <DetailDescriptionTable result={resultDetail}
+                                            socialInsurancePercent={socialInsurancePercent}
+                                            healthInsurancePercent={healthInsurancePercent}
+                                            unemploymentInsurancePercent={unemploymentInsurancePercent}
+                    />
+                </div>
+            </>
     );
 }
 
