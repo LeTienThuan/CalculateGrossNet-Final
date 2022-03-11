@@ -1,9 +1,9 @@
 import classes from './Table.module.css'
 import classesGeneral from '../CSS/General.module.css'
-import {formatterMoney} from "../Result/Result";
+import {formatterMoneyVND} from "../Result/Result";
 const ExplainDetail = (props) => {
 
-	const formatter = formatterMoney;
+	const formatter = formatterMoneyVND;
 	const {
 		grossSalary,
 		socialInsurance,
@@ -24,55 +24,55 @@ const ExplainDetail = (props) => {
 	            <tbody><tr className={classes.rownote}>
 		                    <th>Lương GROSS</th>
 		                    <td className={classesGeneral['w-100']}>
-								{formatter('vi-VN', 'VND',0,grossSalary)}
+								{formatter(grossSalary)}
 							</td>
 	                    </tr>
 	                    <tr>
 		                    <th>Bảo hiểm xã hội ({props.socialInsurancePercent}%)</th>
 		                    <td className={classesGeneral['w-100']}>
-								- {formatter('vi-VN', 'VND',0,socialInsurance)}
+								- {formatter(socialInsurance)}
 							</td>
 	                    </tr>
 	                    <tr>
 		                    <th>Bảo hiểm y tế ({props.healthInsurancePercent}%)</th>
 							<td className={classesGeneral['w-100']}>
-								- {formatter('vi-VN', 'VND',0,healthInsurance)}
+								- {formatter(healthInsurance)}
 							</td>
 	                    </tr>
 						<tr>
 							<th>Bảo hiểm thất nghiệp ({props.unemploymentInsurancePercent}% - lương tối thiểu vùng)</th>
 							<td className={classesGeneral['w-100']}>
-								- {formatter('vi-VN', 'VND',0,unemploymentInsurance)}
+								- {formatter(unemploymentInsurance)}
 							</td>
 						</tr>
 						<tr className={classes.rownote}>
 							<th>Thu nhập trước thuế</th>
 							<td className={classesGeneral['w-100']}>
-								 {formatter('vi-VN', 'VND',0,incomeBeforeTax)}
+								 {formatter(incomeBeforeTax)}
 							</td>
 						</tr>
 						<tr>
 							<th>Giảm trừ gia cảnh bản thân</th>
 							<td className={classesGeneral['w-100']}>
-								- {formatter('vi-VN', 'VND',0,reductionPersonal)}
+								- {formatter(reductionPersonal)}
 							</td>
 						</tr>
 						<tr>
 							<th>Giảm trừ gia cảnh người phụ thuộc</th>
 							<td className={classesGeneral['w-100']}>
-								- {formatter('vi-VN', 'VND',0,reductionDependant)}
+								- {formatter(reductionDependant)}
 							</td>
 						</tr>
 						<tr className={classes.rownote}>
 							<th>Thu nhập chịu thuế</th>
 							<td className={classesGeneral['w-100']}>
-								{formatter('vi-VN', 'VND',0,taxableIncome)}
+								{formatter(taxableIncome)}
 							</td>
 						</tr>
 						<tr>
 							<th>Thuế thu nhập cá nhân(*)</th>
 							<td className={classesGeneral['w-100']}>
-								- {formatter('vi-VN', 'VND',0,personalIncomeTax)}
+								- {formatter(personalIncomeTax)}
 							</td>
 						</tr>
 						<tr className={classes.rownote}>
@@ -81,7 +81,7 @@ const ExplainDetail = (props) => {
 								(Thu nhập trước thuế - Thuế thu nhập cá nhân)
 							</td>
 							<td className={classesGeneral['w-100']}>
-								 {formatter('vi-VN', 'VND',0,netSalary)}
+								 {formatter(netSalary)}
 							</td>
 						</tr>
 				</tbody>

@@ -1,10 +1,10 @@
 import classes from './Table.module.css';
 import classesGeneral from '../CSS/General.module.css'
-import {formatterMoney} from "../Result/Result";
+import {formatterMoneyVND} from "../Result/Result";
 
 const PersonalIncomTax = (props) => {
 
-    const formatter = formatterMoney;
+    const formatter = formatterMoneyVND;
     const {
         toFiveMillionRange,
         upperFiveToTenMillionRange,
@@ -28,37 +28,37 @@ const PersonalIncomTax = (props) => {
                 <tr>
                     <td>Đến 5 triệu VND</td>
                     <td>5%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, toFiveMillionRange)}</td>
+                    <td>{formatter(toFiveMillionRange)}</td>
                 </tr>
                 <tr>
                     <td>Trên 5 triệu VND đến 10 triệu VND</td>
                     <td>10%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, upperFiveToTenMillionRange)}</td>
+                    <td>{formatter(upperFiveToTenMillionRange)}</td>
                 </tr>
                 <tr>
                     <td>Trên 10 triệu VND đến 18 triệu VND</td>
                     <td>15%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, upperTenToEighteenMillionRange)}</td>
+                    <td>{formatter(upperTenToEighteenMillionRange)}</td>
                 </tr>
                 <tr>
                     <td>Trên 18 triệu VND đến 32 triệu VND</td>
                     <td>20%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, upperEighteenToThirtyTwoMillionRange)}</td>
+                    <td>{formatter(upperEighteenToThirtyTwoMillionRange)}</td>
                 </tr>
                 <tr>
                     <td>Trên 32 triệu VND đến 52 triệu VND</td>
                     <td>25%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, upperThirtyTwoToFiftyTwoMillionRange)}</td>
+                    <td>{formatter(upperThirtyTwoToFiftyTwoMillionRange)}</td>
                 </tr>
                 <tr>
                     <td>Trên 52 triệu VND đến 80 triệu VND</td>
                     <td>30%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, upperFiftyTwoToEightyMillionRange)}</td>
+                    <td>{formatter(upperFiftyTwoToEightyMillionRange)}</td>
                 </tr>
                 <tr>
                     <td>Trên 80 triệu VND</td>
                     <td>35%</td>
-                    <td>{formatter('vi-VN', 'VND', 0, upperEightyMillionRange)}</td>
+                    <td>{formatter(upperEightyMillionRange)}</td>
                 </tr>
                 </tbody>
             </table>
