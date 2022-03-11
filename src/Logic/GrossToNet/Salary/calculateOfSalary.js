@@ -14,7 +14,6 @@ export const convertNetVNDtoUSD = (netSalaryVND, exchangeRate) => {
 }
 export const calculateTotalSalaryEmployerPay = (grossSalary, insuranceEmployerPlay) => {
     const {socialInsuranceEmployerPay, healthInsuranceEmployerPay, unemploymentInsuranceEmployerPay} = insuranceEmployerPlay;
-
     return grossSalary + socialInsuranceEmployerPay + healthInsuranceEmployerPay + unemploymentInsuranceEmployerPay;
 }
 export const convertResultToUSD = (grossSalary, netSalary, exchangeRate) => {

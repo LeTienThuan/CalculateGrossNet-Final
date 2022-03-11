@@ -1,10 +1,11 @@
 import classes from './GroupButton.module.css';
 
 const GroupButton = (props) => {
+    const {onConvertGrossToNet, onConvertNetToGross} = props;
     return (
         <div className={classes['group-button']}>
-            <button onClick={props.onConvertGrossToNet}>GROSS → NET</button>
-            <button onClick={props.onConvertNetToGross}>NET → GROSS</button>
+            <button onClick={onConvertGrossToNet}>GROSS → NET</button>
+            <button onClick={onConvertNetToGross}>NET → GROSS</button>
             <button>Print</button>
         </div>
     );

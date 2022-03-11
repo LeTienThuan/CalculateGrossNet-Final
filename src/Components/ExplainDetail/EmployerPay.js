@@ -5,6 +5,7 @@ import {formatterMoneyVND} from "../Result/Result";
 const EmployerPay = (props) => {
 
 	const formatter = formatterMoneyVND;
+	const {employerPay} = props;
 	const {
 		grossSalary,
 		socialInsuranceEmployerPay,
@@ -14,7 +15,7 @@ const EmployerPay = (props) => {
 		healthInsurancePercentEmployerPay ,
 		unemploymentInsurancePercentEmployerPay,
 		total
-	} = props.employerPay;
+	} = employerPay;
     return (
         <div className={classes.footer}>
             <p className={classesGeneral.title}>Người sử dụng lao động trả (VND)</p>

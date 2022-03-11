@@ -9,21 +9,15 @@ import {defaultResultDetailValue} from "./DefaultValue/defaultResultDetailValue"
 import {convertGrossToNet} from "./Logic/GrossToNet/Salary/convertGrossToNet";
 import {convertNetToGross} from "./Logic/NetToGross/Salary/convertNetToGross";
 import classes from "./Components/CSS/General.module.css";
+import {getInsurancePercent} from "./Logic/GeneralFunction/getInsurance";
 
 function App() {
     const [salaryValue, setSalaryValue] = useState(defaultInputValue);
     const [resultDetail, setResultDetail] = useState(defaultResultDetailValue);
-    const {
-        socialInsurancePercent,
-        healthInsurancePercent,
-        unemploymentInsurancePercent
-    } = salaryValue.insurance;
-    const {
-        grossSalaryVND,
-        grossSalaryUSD,
-        netSalaryVND,
-        netSalaryUSD
-    } = resultDetail.overallResult;
+
+    const {insurance} = salaryValue;
+    const {overallResult} = resultDetail;
+    const insurancePercent = getInsurancePercent(insurance);
 
     const updateIncome = (incomeValue) => {
         setSalaryValue({...salaryValue, income: incomeValue})
@@ -59,15 +53,9 @@ function App() {
                     <GroupButton onConvertGrossToNet={calculateGrossToNet}
                                  onConvertNetToGross={calculateNetToGross}
                     />
-                    <Result grossSalaryVND={grossSalaryVND}
-                            grossSalaryUSD={grossSalaryUSD}
-                            netSalaryVND={netSalaryVND}
-                            netSalaryUSD={netSalaryUSD}
-                    />
+                    <Result overallResult={overallResult}/>
                     <DetailDescriptionTable result={resultDetail}
-                                            socialInsurancePercent={socialInsurancePercent}
-                                            healthInsurancePercent={healthInsurancePercent}
-                                            unemploymentInsurancePercent={unemploymentInsurancePercent}
+                                            insurancePercent={insurancePercent}
                     />
                 </div>
             </>

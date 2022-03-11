@@ -5,6 +5,7 @@ import {formatterMoneyVND} from "../Result/Result";
 const PersonalIncomTax = (props) => {
 
     const formatter = formatterMoneyVND;
+    const {detailPersonalIncomeTax} = props;
     const {
         toFiveMillionRange,
         upperFiveToTenMillionRange,
@@ -13,7 +14,7 @@ const PersonalIncomTax = (props) => {
         upperThirtyTwoToFiftyTwoMillionRange,
         upperFiftyTwoToEightyMillionRange,
         upperEightyMillionRange,
-    } = props.detailPersonalIncomeTax;
+    } = detailPersonalIncomeTax;
 
     return (
         <div>

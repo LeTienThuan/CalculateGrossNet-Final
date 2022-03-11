@@ -10,7 +10,8 @@ const formatterMoneyUSD = (amount) => {
     }).format(amount);
 }
 const Result = (props) => {
-    const {grossSalaryVND, netSalaryVND, grossSalaryUSD, netSalaryUSD} = props;
+    const {overallResult} = props
+    const {grossSalaryVND, netSalaryVND, grossSalaryUSD, netSalaryUSD} = overallResult;
 
     return (
         <div className={classes.result}>

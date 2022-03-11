@@ -2,8 +2,10 @@ import classes from './Table.module.css'
 import classesGeneral from '../CSS/General.module.css'
 import {formatterMoneyVND} from "../Result/Result";
 const ExplainDetail = (props) => {
-
 	const formatter = formatterMoneyVND;
+
+	const {detailExplain, insurancePercent} = props;
+	const {socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent} = insurancePercent;
 	const {
 		grossSalary,
 		socialInsurance,
@@ -15,7 +17,7 @@ const ExplainDetail = (props) => {
 		taxableIncome,
 		personalIncomeTax,
 		netSalary
-	} = props.detailExplain;
+	} = detailExplain;
 
     return (
         <div>
@@ -28,19 +30,19 @@ const ExplainDetail = (props) => {
 							</td>
 	                    </tr>
 	                    <tr>
-		                    <th>Bảo hiểm xã hội ({props.socialInsurancePercent}%)</th>
+		                    <th>Bảo hiểm xã hội ({socialInsurancePercent}%)</th>
 		                    <td className={classesGeneral['w-100']}>
 								- {formatter(socialInsurance)}
 							</td>
 	                    </tr>
 	                    <tr>
-		                    <th>Bảo hiểm y tế ({props.healthInsurancePercent}%)</th>
+		                    <th>Bảo hiểm y tế ({healthInsurancePercent}%)</th>
 							<td className={classesGeneral['w-100']}>
 								- {formatter(healthInsurance)}
 							</td>
 	                    </tr>
 						<tr>
-							<th>Bảo hiểm thất nghiệp ({props.unemploymentInsurancePercent}% - lương tối thiểu vùng)</th>
+							<th>Bảo hiểm thất nghiệp ({unemploymentInsurancePercent}% - lương tối thiểu vùng)</th>
 							<td className={classesGeneral['w-100']}>
 								- {formatter(unemploymentInsurance)}
 							</td>

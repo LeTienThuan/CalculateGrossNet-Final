@@ -4,15 +4,13 @@ import PersonalIncomTax from './PersonalIncomTax';
 import EmployerPay from './EmployerPay';
 
 const DetailDescriptionTable = (props) => {
-    const {socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent, result} = props;
+    const {insurancePercent, result} = props;
     const {detailExplain, detailPersonalIncomeTax, employerPay} = result;
 
     return (
         <Fragment>
             <ExplainDetail detailExplain={detailExplain}
-                           socialInsurancePercent={socialInsurancePercent}
-                           healthInsurancePercent={healthInsurancePercent}
-                           unemploymentInsurancePercent={unemploymentInsurancePercent}
+                           insurancePercent={insurancePercent}
             />
             <PersonalIncomTax detailPersonalIncomeTax={detailPersonalIncomeTax}/>
             <EmployerPay employerPay={employerPay}/>
