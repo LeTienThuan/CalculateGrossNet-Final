@@ -1,0 +1,39 @@
+
+.title{
+    font-weight: bold;
+    color: #3B5998;
+    margin-bottom: 5px;
+}
+.fs-13{
+    font-size: 13px;
+}
+.ms-15{
+    margin-left: 15px;
+}
+.ms-8{
+    margin-left: 15px;
+}
+.me-8{
+    margin-right: 8px;
+}
+.w-70{
+    width: 70px;
+}
+.w-80{
+    width: 80px;
+}
+.w-100{
+    width: 100px;
+}
+.w-30{
+    width: 30px;
+}
+.w-40{
+    width: 40px;
+}
+.w-60{
+    width: 60px;
+}
+.mt-10{
+    margin-top: 10px;
+}

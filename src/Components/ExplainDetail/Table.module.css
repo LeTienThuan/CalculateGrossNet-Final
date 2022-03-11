@@ -1,0 +1,31 @@
+
+.data-list {
+    border-collapse: collapse;
+    width: 460px;
+}
+tr {
+    display: table-row;
+    border: 1px solid gray;
+}
+.rownote {
+    background-color: #EDEDED;
+}
+table {
+    border-collapse: separate;
+    font-size: 13px;
+    text-align: end;
+    border-spacing: 5px;
+    font-variant: normal;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+td{
+    border: 1px solid gray;
+    padding: 5px;
+}
+th{
+    padding: 5px;
+    border: 1px solid gray;
+}

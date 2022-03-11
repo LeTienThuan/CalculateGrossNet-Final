@@ -1,0 +1,19 @@
+.group-button{
+    text-align: center;
+}
+button{
+    border: 1px solid #cbc7bd;
+    background: #f8f7f6 url(../Image/ui-bg_fine-grain_10_f8f7f6_60x60.png) 50% 50% repeat;
+    cursor: pointer;
+    font-weight: bold;
+    color: #654b24;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin: 5px;
+}
+button:hover{
+    border: 1px solid #654b24;
+    background: #654b24 url(../Image/ui-bg_fine-grain_65_654b24_60x60.png) 50% 50% repeat;
+    cursor: pointer;
+    color: white;
+}
