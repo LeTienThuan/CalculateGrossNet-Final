@@ -15,7 +15,8 @@ import {calculateGross} from "./calculateGross";
 
 export const convertNetToGross = (salaryValue, resultDetail) => {
     const {area, income, insurance, familyAllowances} = salaryValue;
-    const {minimumSalary, exchangeRate} = {insurance, income};
+    const {minimumSalary} = insurance;
+    const {exchangeRate} = income;
     const defaultDetailPersonalIncomeTax = resultDetail.detailPersonalIncomeTax;
     const {socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent} = insurance;
 
