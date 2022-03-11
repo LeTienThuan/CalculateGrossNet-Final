@@ -2,7 +2,8 @@ export const calculateGrossSalary = (income) => {
     const {incomeVND, incomeUSD, exchangeRate} = income;
     return incomeVND + (incomeUSD * exchangeRate);
 }
-export const calculateNetSalary = (incomeBeforeTax, personalIncomeTax) => {
+export const calculateNetSalary = (tax) => {
+    const {incomeBeforeTax, personalIncomeTax} = tax;
     return incomeBeforeTax - personalIncomeTax;
 }
 export const convertGrossVNDToUSD = (grossSalaryVND, exchangeRate) => {

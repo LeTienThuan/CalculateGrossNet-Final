@@ -13,23 +13,16 @@ import {
 import {calculateTax} from "../Tax/calculateGeneralTax";
 
 export const convertGrossToNet = (salaryValue, resultDetail) => {
-
-    const grossSalary = calculateGrossSalary(salaryValue.income);
-    const {insurance, familyAllowances} = salaryValue;
-    const {exchangeRate} = salaryValue.income;
+    const {insurance, familyAllowances, income, area} = salaryValue;
+    const grossSalary = calculateGrossSalary(income);
+    const {exchangeRate} = income;
     const {minimumSalary, socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent} = insurance;
-    const {area} = salaryValue;
 
     const insuranceValue = calculateInsurance(grossSalary, salaryValue);
     const reduction = calculateReduction(familyAllowances);
-    const {
-        incomeBeforeTax,
-        taxableIncome,
-        personalIncomeTax,
-        detailPersonalIncomeTax
-    } = calculateTax(grossSalary, salaryValue, resultDetail);
-
-    const netSalary = calculateNetSalary(incomeBeforeTax, personalIncomeTax);
+    const tax = calculateTax(grossSalary, salaryValue, resultDetail);
+    const {detailPersonalIncomeTax} = tax;
+    const netSalary = calculateNetSalary(tax);
 
     const insurancePercentEmployerPay = calculatePercentInsuranceEmployerPay(socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent);
     const insuranceEmployerPay = calculateInsuranceEmployerPlay(grossSalary, minimumSalary, insurancePercentEmployerPay,insurance, area);
@@ -37,15 +30,7 @@ export const convertGrossToNet = (salaryValue, resultDetail) => {
     const total = calculateTotalSalaryEmployerPay(grossSalary, insuranceEmployerPay);
     const salaryUSD = convertResultToUSD(grossSalary, netSalary, exchangeRate);
 
-    const detailExplain = {
-        grossSalary,
-        ...insuranceValue,
-        incomeBeforeTax,
-        ...reduction,
-        taxableIncome,
-        personalIncomeTax,
-        netSalary
-    }
+    const detailExplain = {grossSalary, ...insuranceValue, ...tax, ...reduction, netSalary}
     const employerPay = {grossSalary, ...insuranceEmployerPay, ...insurancePercentEmployerPay, total};
     const overallResult = {grossSalaryVND: grossSalary, netSalaryVND: netSalary, ...salaryUSD};
 

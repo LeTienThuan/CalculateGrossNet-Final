@@ -7,7 +7,7 @@ import {
     calculatePersonalIncomeTax
 } from "./PersonalIncomeTax/calculateOfPersonalIncomeTax";
 
-export const  calculateTax = (grossSalary, salaryValue, resultDetail) =>{
+export const calculateTax = (grossSalary, salaryValue, resultDetail) => {
     const defaultDetailPersonalIncomeTax = resultDetail.detailPersonalIncomeTax;
     const {socialInsurance, healthInsurance, unemploymentInsurance} = calculateInsurance(grossSalary, salaryValue);
     const {reductionPersonal, reductionDependant} = calculateReduction(salaryValue.familyAllowances);
@@ -17,5 +17,5 @@ export const  calculateTax = (grossSalary, salaryValue, resultDetail) =>{
     const personalIncomeTax = calculatePersonalIncomeTax(taxableIncome);
     const detailPersonalIncomeTax = calculateDetailRangePersonalIncomeTax(taxableIncome, defaultDetailPersonalIncomeTax);
 
-    return {incomeBeforeTax, taxableIncome,personalIncomeTax, detailPersonalIncomeTax};
+    return {incomeBeforeTax, taxableIncome, personalIncomeTax, detailPersonalIncomeTax};
 }
