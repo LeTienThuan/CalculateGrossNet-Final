@@ -1,46 +1,49 @@
-.heading{
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: bold;
-    color: #3B5998;
-    background-color: #EDEDED;
-    padding: 15px 0;
+.heading {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #3b5998;
+  background-color: #ededed;
+  padding: 15px 0;
 }
-.title{
-    font-weight: bold;
-    color: #3B5998;
-    margin-bottom: 5px;
+.title {
+  font-weight: bold;
+  color: #3b5998;
+  margin-bottom: 5px;
 }
-.fs-13{
-    font-size: 13px;
+.area-icon {
+  cursor: pointer;
 }
-.ms-15{
-    margin-left: 15px;
+.fs-13 {
+  font-size: 13px;
 }
-.ms-8{
-    margin-left: 15px;
+.ms-15 {
+  margin-left: 15px;
 }
-.me-8{
-    margin-right: 8px;
+.ms-8 {
+  margin-left: 15px;
 }
-.w-70{
-    width: 70px;
+.me-8 {
+  margin-right: 8px;
 }
-.w-80{
-    width: 80px;
+.w-70 {
+  width: 70px;
 }
-.w-100{
-    width: 100px;
+.w-80 {
+  width: 80px;
 }
-.w-30{
-    width: 30px;
+.w-100 {
+  width: 100px;
 }
-.w-40{
-    width: 40px;
+.w-30 {
+  width: 30px;
 }
-.w-60{
-    width: 60px;
+.w-40 {
+  width: 40px;
 }
-.mt-10{
-    margin-top: 10px;
+.w-60 {
+  width: 60px;
+}
+.mt-10 {
+  margin-top: 10px;
 }
