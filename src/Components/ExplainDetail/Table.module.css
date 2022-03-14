@@ -29,3 +29,6 @@ th{
     padding: 5px;
     border: 1px solid gray;
 }
+.fw-normal{
+    font-weight: normal;
+}
