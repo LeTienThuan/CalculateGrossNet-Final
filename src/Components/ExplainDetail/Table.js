@@ -7,7 +7,8 @@ const Table = (props) => {
     return (<table className={classes['data-list']}>
                 <tbody>
                 {dataWarehouse.map((data, index) => {
-                    return (<tr key={index} className={data.isGrayBackground && classes.rownote}>
+                const className = (data.isGrayBackground || index === dataWarehouse.length - 1) ? classes.rownote : "";
+                    return (<tr key={index} className={className}>
                         <th>
                             {data.title}<br/>
                             {index === dataWarehouse.length - 1 ?

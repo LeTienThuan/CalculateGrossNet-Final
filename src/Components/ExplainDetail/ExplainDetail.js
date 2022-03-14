@@ -30,7 +30,7 @@ const ExplainDetail = (props) => {
         {title: 'Giảm trừ gia cảnh người phụ thuộc', content: reductionDependant},
         {title: 'Thu nhập chịu thuế', content: taxableIncome, isGrayBackground: true},
         {title: 'Thuế thu nhập cá nhân (*)', content: personalIncomeTax},
-        {title: 'Lương NET',explainTitle:'(Thu nhập trước thuế - Thuế thu nhập cá nhân)' ,content: netSalary,isGrayBackground: true}
+        {title: 'Lương NET',explainTitle:'(Thu nhập trước thuế - Thuế thu nhập cá nhân)' ,content: netSalary}
     ]
     return (<>
                 <p className={classes.title}>Diễn giải chi tiết (VND)</p>
