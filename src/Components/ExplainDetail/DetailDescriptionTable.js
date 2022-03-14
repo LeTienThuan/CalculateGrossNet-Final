@@ -1,6 +1,6 @@
 import {Fragment} from 'react';
 import ExplainDetail from './ExplainDetail';
-import PersonalIncomTax from './PersonalIncomTax';
+import PersonalIncomTax from './PersonalIncomeTax';
 import EmployerPay from './EmployerPay';
 
 const DetailDescriptionTable = (props) => {

@@ -1,7 +1,6 @@
 import classesGeneral from '../CSS/General.module.css'
 import classes from './EmployerPay.module.css'
-import {formatterMoneyVND} from "../Result/Result";
-import Table from "./Table";
+import VerticalTable from "./VerticalTable";
 const EmployerPay = (props) => {
 
 	const {employerPay} = props;
@@ -25,7 +24,7 @@ const EmployerPay = (props) => {
     return (
         <div className={classes.footer}>
             <p className={classesGeneral.title}>Người sử dụng lao động trả (VND)</p>
-			<Table dataWarehouse={data}/>
+			<VerticalTable dataStore={data}/>
         </div>
     );
 }

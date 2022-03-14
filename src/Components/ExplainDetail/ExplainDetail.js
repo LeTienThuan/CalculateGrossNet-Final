@@ -1,5 +1,5 @@
 import classes from '../CSS/General.module.css'
-import Table from "./Table";
+import VerticalTable from "./VerticalTable";
 
 const ExplainDetail = (props) => {
 
@@ -34,7 +34,7 @@ const ExplainDetail = (props) => {
     ]
     return (<>
                 <p className={classes.title}>Diễn giải chi tiết (VND)</p>
-                <Table dataWarehouse={data}/>
+                <VerticalTable dataStore={data}/>
             </>
     );
 }
