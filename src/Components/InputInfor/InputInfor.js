@@ -4,22 +4,22 @@ import Area from "./Area";
 import FamilyAllowances from "./FamilyAllowances";
 
 const InputInfor = (props) => {
-    const {onUpdateIncome, onUpdateInsurance, onUpdateArea, onUpdateFamilyAllowances, salaryValue} = props;
+    const {onUpdateData, salaryValue} = props;
     const {income, insurance, familyAllowances, area} = salaryValue;
 
     return (
         <>
             <Income income={income}
-                    onUpdateIncome={onUpdateIncome}
+                    onUpdateData={onUpdateData}
             />
             <Insurance insurance={insurance}
-                       onUpdateInsurance={onUpdateInsurance}
+                       onUpdateData={onUpdateData}
             />
             <Area area={area}
-                  onUpdateArea={onUpdateArea}
+                  onUpdateData={onUpdateData}
             />
             <FamilyAllowances familyAllowances={familyAllowances}
-                              onUpdateFamilyAllowances={onUpdateFamilyAllowances}
+                              onUpdateData={onUpdateData}
             />
         </>
     );

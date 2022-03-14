@@ -8,7 +8,7 @@ const Income = (props) => {
     const {incomeVND, incomeUSD, exchangeRate} = income;
 
     useEffect(() => {
-        props.onUpdateIncome(income);
+        props.onUpdateData('income')(income);
     }, [income])
 
     const changeIncomeValue = (field) => (event) => {

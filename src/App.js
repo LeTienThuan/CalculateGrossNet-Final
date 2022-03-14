@@ -19,18 +19,9 @@ function App() {
     const {overallResult} = resultDetail;
     const insurancePercent = getInsurancePercent(insurance);
 
-    const updateIncome = (incomeValue) => {
-        setSalaryValue({...salaryValue, income: incomeValue});
-    };
-    const updateInsurance = (insuranceValue) => {
-        setSalaryValue({...salaryValue, insurance: insuranceValue});
-    };
-    const updateArea = (areaValue) => {
-        setSalaryValue({...salaryValue, area: areaValue});
-    };
-    const updateFamilyAllowances = (familyAllowances) => {
-        setSalaryValue({...salaryValue, familyAllowances: familyAllowances});
-    };
+    const updateData = (field) =>(value)=>{
+        setSalaryValue({...salaryValue, [field]:value})
+    }
 
     const calculateGrossToNet = () => {
         const newResult = convertGrossToNet(salaryValue, resultDetail);
@@ -49,10 +40,7 @@ function App() {
             <div className="app">
                 <InputInfor
                     salaryValue={salaryValue}
-                    onUpdateIncome={updateIncome}
-                    onUpdateInsurance={updateInsurance}
-                    onUpdateArea={updateArea}
-                    onUpdateFamilyAllowances={updateFamilyAllowances}
+                    onUpdateData={updateData}
                 />
                 <GroupButton
                     onConvertGrossToNet={calculateGrossToNet}

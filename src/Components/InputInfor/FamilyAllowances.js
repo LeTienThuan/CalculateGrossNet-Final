@@ -7,9 +7,8 @@ const FamilyAllowances = (props) => {
     const {personal, dependant, numberOfDependant} = familyAllowances;
 
     useEffect(() => {
-        props.onUpdateFamilyAllowances(familyAllowances)
-    }, [familyAllowances])
-
+        props.onUpdateData('familyAllowances')(familyAllowances)
+    },[familyAllowances])
     const changeFamilyAllowancesValue = (field) => (event) => {
         setFamilyAllowances({...familyAllowances, [field]: (+event.target.value)})
     }

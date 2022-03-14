@@ -9,7 +9,7 @@ const Area = (props) => {
     const [isShowModal, setIsShowModal] = useState(false);
 
     useEffect(() => {
-        props.onUpdateArea(area);
+        props.onUpdateData('area')(area);
     }, [area]);
 
     const handleArea = (event) => {

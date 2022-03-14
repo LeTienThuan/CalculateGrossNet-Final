@@ -16,7 +16,7 @@ const Insurance = (props) => {
     } = insurance;
 
     useEffect(() => {
-        props.onUpdateInsurance(insurance)
+        props.onUpdateData('insurance')(insurance)
     }, [insurance])
 
     const handleOtherRadioButton = () => {
