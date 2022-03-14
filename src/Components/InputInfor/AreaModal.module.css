@@ -2,20 +2,15 @@
   position: fixed;
   height: auto;
   width: 650px;
-  top: 45px;
-  left: 391.5px;
-  display: none;
+  display: flex;
   flex-direction: column;
   border: 1px solid #d9d6c4;
   background: #eceadf url(../Image/ui-bg_fine-grain_10_eceadf_60x60.png) 50% 50%
     repeat;
-  font-family: Arial, Lucida Grande, Verdana, Geneva, Sans-serif;
+  font-family: Arial, serif;
   font-size: 13px;
   color: #1f1f1f;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-radius: 6px;
   left: 30%;
   top: 30%;
 }
@@ -29,10 +24,7 @@
     repeat;
   color: #453821;
   font-weight: bold;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-radius: 6px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -49,5 +41,5 @@
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
 }

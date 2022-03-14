@@ -14,6 +14,12 @@ const Area = (props) => {
   const handleArea = (event) => {
     setArea(event.target.value);
   };
+  const handleAreaModalOverlay = () =>{
+    setIsShowModal(!isShowModal);
+  }
+  const handleExitModal = () =>{
+    setIsShowModal(false);
+  }
 
   return (
     <div className={`${classes["mt-10"]} ${classes["fs-13"]}`}>
@@ -24,10 +30,12 @@ const Area = (props) => {
           width="16px"
           src={areaImg}
           alt="small-icon"
-          //    onClick={}
+          onClick={handleAreaModalOverlay}
         />{" "}
         &nbsp;
-        <AreaModal />
+        <AreaModal isShow={isShowModal}
+                    onExitModal={handleExitModal}
+        />
         <span>
           <input
             type="radio"
