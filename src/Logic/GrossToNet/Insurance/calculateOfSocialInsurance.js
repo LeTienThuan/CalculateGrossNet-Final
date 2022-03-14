@@ -28,7 +28,7 @@ export const calculateSocialInsuranceEmployerPay = (grossSalary, minimumSalary, 
 
     if (isChooseOtherInput) {
         if (specificInsuranceAmount > minimumSalary * 20) {
-            return minimumSalary * 20 * (socialInsurancePercentEmployerPay / 100);
+            return (minimumSalary * 20 * (socialInsurancePercentEmployerPay / 100));
         } else {
             return specificInsuranceAmount * (socialInsurancePercentEmployerPay / 100);
         }

@@ -1,14 +1,14 @@
 import classes from "../Result/Result.module.css"
 
-export const formatterMoneyVND = (amount) => {
-    return new Intl.NumberFormat('vi-VN', {
+export const formatterMoneyVND = (amount) =>
+    new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
         minimumFractionDigits: 0
     }).format(amount);
-}
-const formatterMoneyUSD = (amount) => {
-    return new Intl.NumberFormat('en-US', {
-    }).format(amount);
-}
+
+const formatterMoneyUSD = (amount) => new Intl.NumberFormat('en-US', {}).format(amount);
+
 const Result = (props) => {
     const {overallResult} = props
     const {grossSalaryVND, netSalaryVND, grossSalaryUSD, netSalaryUSD} = overallResult;

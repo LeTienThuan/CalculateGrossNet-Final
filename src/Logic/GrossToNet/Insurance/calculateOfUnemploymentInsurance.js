@@ -57,7 +57,8 @@ export const calculateUnemploymentInsurance = (grossSalary, salaryValue) => {
             }
             return 884000;
         }
-        return ((unemploymentInsurancePercent / 100) * grossSalary)
+
+        return (+((unemploymentInsurancePercent / 100) * grossSalary).toFixed(0))
     }
 }
 export  const calculateUnemploymentInsurancePercentEmployerPay = (unemploymentInsurancePercent) => {

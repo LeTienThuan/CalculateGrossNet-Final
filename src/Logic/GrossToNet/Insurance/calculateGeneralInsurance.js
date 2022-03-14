@@ -21,8 +21,8 @@ export const calculateInsurance = (grossSalary, salaryValue) => {
 
     return {socialInsurance, healthInsurance, unemploymentInsurance};
 }
-export const calculatePercentInsuranceEmployerPay = (socialInsurancePercent, healthInsurancePercent,
-                                                     unemploymentInsurancePercent) => {
+export const calculatePercentInsuranceEmployerPay = (insurancePercent) => {
+    const {socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent} = insurancePercent;
 
     const socialInsurancePercentEmployerPay = calculateSocialInsurancePercentEmployerPay(socialInsurancePercent);
     const healthInsurancePercentEmployerPay = calculateHealthInsurancePercentEmployerPay(healthInsurancePercent);
@@ -34,8 +34,9 @@ export const calculatePercentInsuranceEmployerPay = (socialInsurancePercent, hea
         unemploymentInsurancePercentEmployerPay
     }
 }
-export const calculateInsuranceEmployerPlay = (grossSalary, minimumSalary, insurancePercentEmployerPay, insurance, area) => {
-    const {isChooseOtherInput, specificInsuranceAmount} = insurance;
+export const calculateInsuranceEmployerPlay = (grossSalary, salaryValue, insurancePercentEmployerPay) => {
+    const {area, insurance} = salaryValue;
+    const {minimumSalary, isChooseOtherInput, specificInsuranceAmount} = insurance;
     const {
         socialInsurancePercentEmployerPay,
         healthInsurancePercentEmployerPay,
@@ -51,4 +52,8 @@ export const calculateInsuranceEmployerPlay = (grossSalary, minimumSalary, insur
             calculateUnemploymentInsuranceEmployerPay(specificInsuranceAmount, minimumSalary, unemploymentInsurancePercentEmployerPay, area);
     }
     return {socialInsuranceEmployerPay, healthInsuranceEmployerPay, unemploymentInsuranceEmployerPay};
+}
+export const getInsurancePercent = (insurance) => {
+    const {socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent} = insurance;
+    return {socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent};
 }

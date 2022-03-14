@@ -2,7 +2,6 @@ import Income from "./Income";
 import Insurance from "./Insurance";
 import Area from "./Area";
 import FamilyAllowances from "./FamilyAllowances";
-import classes from '../CSS/General.module.css'
 
 const InputInfor = (props) => {
     const {onUpdateIncome, onUpdateInsurance, onUpdateArea, onUpdateFamilyAllowances, salaryValue} = props;

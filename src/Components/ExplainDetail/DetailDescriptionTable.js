@@ -8,13 +8,13 @@ const DetailDescriptionTable = (props) => {
     const {detailExplain, detailPersonalIncomeTax, employerPay} = result;
 
     return (
-        <Fragment>
+        <>
             <ExplainDetail detailExplain={detailExplain}
                            insurancePercent={insurancePercent}
             />
             <PersonalIncomTax detailPersonalIncomeTax={detailPersonalIncomeTax}/>
             <EmployerPay employerPay={employerPay}/>
-        </Fragment>
+        </>
     );
 }
 

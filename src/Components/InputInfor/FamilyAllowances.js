@@ -1,5 +1,6 @@
 import classes from '../CSS/General.module.css';
 import {useEffect, useState} from "react";
+import InputNumber from "./InputNumber";
 
 const FamilyAllowances = (props) => {
     const [familyAllowances, setFamilyAllowances] = useState(props.familyAllowances)
@@ -16,27 +17,26 @@ const FamilyAllowances = (props) => {
     return (
         <div className={classes['fs-13']}>
             <p className={classes.title}>Giảm trừ gia cảnh: </p>
-            <span>Cá nhân:
-                <input  className={classes['w-70']}
-                        type='number'
-                        value={personal}
-                        onChange={changeFamilyAllowancesValue('personal')}
-                /> VND &emsp;
-            </span>
-            <span>Phụ thuộc:
-                <input className={classes['w-70']}
-                       type='number'
-                       value={dependant}
-                       onChange={changeFamilyAllowancesValue('dependant')}
-                /> VND &emsp;
-            </span>
-            <span>Số người phụ thuộc:
-                <input className={classes['w-40']}
-                       type='number'
-                       value={numberOfDependant}
-                       onChange={changeFamilyAllowancesValue('numberOfDependant')}
-                /> VND &emsp;
-            </span>
+            <InputNumber classes={`${classes['w-100']} ${classes['me-8']}`}
+                         value={personal}
+                         onChange={changeFamilyAllowancesValue}
+                         field='personal'
+                         label='Cá nhân: '
+                         unit=' VND'
+            />
+            <InputNumber classes={`${classes['w-100']} ${classes['me-8']}`}
+                         value={dependant}
+                         onChange={changeFamilyAllowancesValue}
+                         field='dependant'
+                         label='Phụ thuộc: '
+                         unit=' VND'
+            />
+            <InputNumber classes={`${classes['w-40']}`}
+                         value={numberOfDependant}
+                         onChange={changeFamilyAllowancesValue}
+                         field='numberOfDependant'
+                         label='Số người phụ thuộc: '
+            />
         </div>
     );
 }

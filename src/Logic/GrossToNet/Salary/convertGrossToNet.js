@@ -8,15 +8,15 @@ import {calculateReduction} from "../Reduction/calculateOfReduction";
 import {
     calculateInsurance,
     calculateInsuranceEmployerPlay,
-    calculatePercentInsuranceEmployerPay
+    calculatePercentInsuranceEmployerPay, getInsurancePercent
 } from "../Insurance/calculateGeneralInsurance";
 import {calculateTax} from "../Tax/calculateGeneralTax";
 
 export const convertGrossToNet = (salaryValue, resultDetail) => {
-    const {insurance, familyAllowances, income, area} = salaryValue;
+    const {insurance, familyAllowances, income} = salaryValue;
     const grossSalary = calculateGrossSalary(income);
     const {exchangeRate} = income;
-    const {minimumSalary, socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent} = insurance;
+    const insurancePercent = getInsurancePercent(insurance);
 
     const insuranceValue = calculateInsurance(grossSalary, salaryValue);
     const reduction = calculateReduction(familyAllowances);
@@ -24,8 +24,8 @@ export const convertGrossToNet = (salaryValue, resultDetail) => {
     const {detailPersonalIncomeTax} = tax;
     const netSalary = calculateNetSalary(tax);
 
-    const insurancePercentEmployerPay = calculatePercentInsuranceEmployerPay(socialInsurancePercent, healthInsurancePercent, unemploymentInsurancePercent);
-    const insuranceEmployerPay = calculateInsuranceEmployerPlay(grossSalary, minimumSalary, insurancePercentEmployerPay,insurance, area);
+    const insurancePercentEmployerPay = calculatePercentInsuranceEmployerPay(insurancePercent);
+    const insuranceEmployerPay = calculateInsuranceEmployerPlay(grossSalary, salaryValue, insurancePercentEmployerPay);
 
     const total = calculateTotalSalaryEmployerPay(grossSalary, insuranceEmployerPay);
     const salaryUSD = convertResultToUSD(grossSalary, netSalary, exchangeRate);
